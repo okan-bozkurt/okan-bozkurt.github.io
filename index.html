@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Okan Bozkurt 🐺</title>
+    <!-- Google Fonts - Inter font ailesi -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Ana CSS dosyası -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <script>
+        (function () {
+            var theme = localStorage.getItem('theme');
+            if (theme === 'dark') {
+                document.body.classList.add('dark-mode');
+            }
+        })();
+    </script>
+    <div class="eye-health-banner">
+        👁️ Bu sayfa mavi ışık içermez - Göz sağlığınız için endişe edinmeyin - Sayfayı okurken rahat edebilirsiniz
+    </div>
+
+    <header>
+        <nav class="navbar">
+            <a href="about_me.html" class="nav-logo">Okan Bozkurt</a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Anasayfa</a></li>
+                <li class="nav-item"><a href="about_me.html" class="nav-link">Hakkımda</a></li>
+                <li class="nav-item"><a href="portfolio.html" class="nav-link">Portfolyo</a></li>
+                <li class="nav-item"><a href="my_hobbies.html" class="nav-link">Boş Zamanlarım</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">İletişim</a></li>
+                <li class="nav-item" style="cursor: pointer;" id="theme-toggle">🌓</li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+    <!-- ==========================================================================
+         HERO SECTION - Ana Tanıtım Bölümü
+         Ziyaretçilerin ilk gördüğü etkileyici bölüm
+         ========================================================================== -->
+    <section class="hero">
+        <!-- Profil Alanı -->
+        <div class="hero-content">
+            <!-- Profil Fotoğrafı Alanı -->
+            <div class="profile-image">
+                <!-- Eğer profil fotoğrafın varsa src'yi değiştir -->
+                <span class="profile-emoji">🐺</span>
+            </div>
+
+            <!-- Ana Başlık -->
+            <h1 class="hero-title">Merhaba, Ben <span class="highlight">Okan Bozkurt</span> 🐺</h1>
+
+            <!-- Alt Başlık / Unvan -->
+            <h2 class="hero-subtitle">Yapay Zeka Otomasyon Geliştiricisi</h2>
+
+            <!-- Kısa Açıklama -->
+            <p class="hero-description">
+                Yapay zeka ve otomasyon sistemleri geliştirerek iş süreçlerini optimize ediyorum.
+                Çukurova Üniversitesi Bilgisayar Bilimleri 3. sınıf öğrencisiyim.
+            </p>
+
+
+    </section>
+
+    <!-- ==========================================================================
+         SKILLS SECTION - Yetenekler Bölümü
+         Ana yetenekleri kart formatında gösterir
+         ========================================================================== -->
+    <section class="skills-section">
+        <h3>Yeteneklerim</h3>
+        <div class="skills-grid">
+            <!-- Her skill-card bir yetenek kartı -->
+            <div class="skill-card">
+                <span class="skill-icon">🐍</span>
+                <h4>Python</h4>
+                <p>Otomasyon scriptleri ve AI projeleri</p>
+            </div>
+            <div class="skill-card">
+                <span class="skill-icon">🤖</span>
+                <h4>Yapay Zeka</h4>
+                <p>AI modelleri ve entegrasyonlar</p>
+            </div>
+            <div class="skill-card">
+                <span class="skill-icon">⚡</span>
+                <h4>Otomasyon</h4>
+                <p>İş süreçleri otomasyonu</p>
+            </div>
+            <div class="skill-card">
+                <span class="skill-icon">🌐</span>
+                <h4>Web Geliştirme</h4>
+                <p>HTML, CSS, JavaScript</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         QUICK STATS - Hızlı İstatistikler
+         Deneyim ve başarıları rakamlarla gösterir
+         ========================================================================== -->
+    <section class="stats-section">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <span class="stat-number">8+</span>
+                <span class="stat-label">Fikir Yarışması</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">2</span>
+                <span class="stat-label">Hackathon</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">1+</span>
+                <span class="stat-label">Yıl Deneyim</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">∞</span>
+                <span class="stat-label">Öğrenme Tutkusu</span>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p class="footer-text">Bu sayfa Okan Bozkurt <span class="wolf">🐺</span> tarafından oluşturulmuştur. </p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
