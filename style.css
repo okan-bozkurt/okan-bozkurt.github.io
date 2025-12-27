@@ -1,0 +1,1135 @@
+/* ==========================================================================
+   🎨 OKAN BOZKURT KİŞİSEL WEB SİTESİ - CSS DOSYASI
+   Bu dosya web sitesinin tüm görsel stillerini içerir.
+   Hazırlayan: Okan Bozkurt
+   ========================================================================== */
+
+
+/* ==========================================================================
+   BÖLÜM 1: CSS DEĞİŞKENLERİ (VARIABLES)
+   :root içinde tanımlanan değişkenler, tüm CSS'te kullanılabilir.
+   var(--değişken-adı) şeklinde çağırılır.
+   Bu sayede renkleri tek yerden değiştirmek mümkün olur.
+   ========================================================================== */
+:root {
+    /* Ana renkler - Light Mode (Açık Tema) */
+    --bg-color: #FDF6E3;
+    /* Sayfa arka plan rengi - Krem tonunda, göz dostu */
+    --text-color: #3D3229;
+    /* Yazı rengi - Koyu kahve, okunabilirlik için */
+    --nav-bg: #FDF6E3;
+    /* Navigasyon arka planı */
+    --nav-text: #3D3229;
+    /* Navigasyon yazı rengi */
+    --container-bg: #FFFFFF;
+    /* Kart/Kutu arka planı - Beyaz */
+    --card-bg: #F1F1F1;
+    /* Slider kartları arka planı - Açık gri */
+    --accent-color: #7D8B69;
+    /* Vurgu rengi - Doğal yeşil tonu */
+    --slider-bg: #7D8B69;
+    /* Slider arka plan rengi */
+    --border-color: #E0E0E0;
+    /* Kenarlık rengi */
+    --input-bg: #FAFAFA;
+    /* Form input arka planı */
+
+    /* Tipografi değişkenleri */
+    --font-primary: 'Inter', 'Segoe UI', sans-serif;
+    /* Ana font ailesi */
+    --font-size-base: 16px;
+    /* Temel font boyutu */
+    --line-height: 1.7;
+    /* Satır yüksekliği - okunabilirlik için */
+    --letter-spacing: 0.02em;
+    /* Harf aralığı */
+
+    /* Geçiş animasyonu süresi */
+    --transition-speed: 0.3s;
+    /* Animasyonların hızı */
+
+    /* Gölge efektleri */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+    /* Küçük gölge */
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+    /* Orta gölge */
+    --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
+    /* Büyük gölge */
+}
+
+
+/* ==========================================================================
+   BÖLÜM 2: DARK MODE (KARANLIK TEMA)
+   body.dark-mode sınıfı eklendiğinde bu renkler aktif olur.
+   JavaScript ile tema değiştirme butonu çalıştırılır.
+   ========================================================================== */
+body.dark-mode {
+    --bg-color: #121212;
+    /* Çok koyu gri - ana arka plan */
+    --text-color: #D1D1D1;
+    /* Açık gri - yazı rengi, tam beyaz değil göz yormaz */
+    --nav-bg: #1E1E1E;
+    /* Navigasyon arka planı - koyu */
+    --nav-text: #FFFFFF;
+    /* Navigasyon yazısı - beyaz */
+    --container-bg: #1E1E1E;
+    /* Kart arka planı */
+    --card-bg: #2C2C2C;
+    /* Slider kart arka planı */
+    --accent-color: #A0A0A0;
+    /* Vurgu rengi - gri tonunda (mavi ışık yok) */
+    --slider-bg: #2C2C2C;
+    /* Slider arka planı */
+    --border-color: #444444;
+    /* Kenarlık rengi */
+    --input-bg: #2C2C2C;
+    /* Form input arka planı */
+}
+
+
+/* ==========================================================================
+   BÖLÜM 3: TEMEL SAYFA STİLLERİ (BODY)
+   Tüm sayfanın genel görünümünü belirler.
+   ========================================================================== */
+body {
+    background-color: var(--bg-color);
+    /* Arka plan rengi değişkenden alınır */
+    color: var(--text-color);
+    /* Yazı rengi */
+    font-family: var(--font-primary);
+    /* Font ailesi */
+    font-size: var(--font-size-base);
+    /* Temel font boyutu */
+    line-height: var(--line-height);
+    /* Satır yüksekliği */
+    letter-spacing: var(--letter-spacing);
+    /* Harf aralığı */
+    text-align: center;
+    /* Yazıları ortala */
+    margin: 0;
+    /* Varsayılan margin'i sıfırla */
+    padding: 0;
+    /* Varsayılan padding'i sıfırla */
+    transition: background-color var(--transition-speed),
+        color var(--transition-speed);
+    /* Tema değişiminde yumuşak geçiş */
+}
+
+
+/* ==========================================================================
+   BÖLÜM 4: BAŞLIK STİLLERİ (HEADINGS)
+   h1'den h6'ya kadar başlık stilleri.
+   Hiyerarşik yapı: h1 en büyük, h6 en küçük
+   ========================================================================== */
+h1 {
+    font-size: 2.5rem;
+    /* rem = root em, 2.5 * 16px = 40px */
+    font-weight: 700;
+    /* Kalın yazı */
+    margin-bottom: 1rem;
+    /* Alt boşluk */
+    color: var(--text-color);
+    /* Tema rengini kullan */
+}
+
+h2 {
+    font-size: 1.8rem;
+    /* 28.8px */
+    font-weight: 600;
+    /* Yarı kalın */
+    margin-top: 2rem;
+    /* Üst boşluk */
+    margin-bottom: 0.8rem;
+    /* Alt boşluk */
+    color: var(--text-color);
+}
+
+h3 {
+    font-size: 1.5rem;
+    /* 24px */
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+h4 {
+    font-size: 1.3rem;
+    /* 20.8px */
+    font-weight: 500;
+    /* Normal-kalın arası */
+    color: var(--text-color);
+}
+
+h5 {
+    font-size: 1.1rem;
+    /* 17.6px */
+    font-weight: 500;
+    color: var(--accent-color);
+    /* Vurgu rengi */
+}
+
+h6 {
+    font-size: 1rem;
+    /* 16px - temel boyut */
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+
+/* ==========================================================================
+   BÖLÜM 5: PARAGRAF STİLLERİ
+   Metin içerikleri için stiller.
+   ========================================================================== */
+p {
+    color: var(--text-color);
+    max-width: 800px;
+    /* Maksimum genişlik - okunabilirlik için */
+    margin-left: auto;
+    /* Ortala */
+    margin-right: auto;
+    /* Ortala */
+    padding: 0 20px;
+    /* Yanlarda boşluk */
+    text-align: justify;
+    /* İki yana yasla */
+}
+
+
+/* ==========================================================================
+   BÖLÜM 6: LİNK STİLLERİ (ANCHOR TAGS)
+   <a> etiketleri için stiller.
+   ========================================================================== */
+a {
+    color: #8B7355;
+    /* Kahverengi ton */
+    text-decoration: none;
+    /* Alt çizgiyi kaldır */
+    transition: color var(--transition-speed);
+    /* Renk değişiminde geçiş efekti */
+}
+
+a:hover {
+    color: var(--accent-color);
+    /* Üzerine gelince vurgu rengi */
+    text-decoration: underline;
+    /* Üzerine gelince alt çizgi */
+}
+
+
+/* ==========================================================================
+   BÖLÜM 7: GÖZ SAĞLIĞI BANNER'I
+   Sayfanın en üstündeki bilgi bandı.
+   Mavi ışık içermediğini belirtir.
+   ========================================================================== */
+.eye-health-banner {
+    background-color: var(--nav-bg);
+    color: var(--text-color);
+    text-align: center;
+    padding: 12px 20px;
+    /* İç boşluk: üst-alt 12px, sağ-sol 20px */
+    font-size: 0.9rem;
+    /* Biraz küçük font */
+    font-weight: 600;
+    /* Yarı kalın */
+    border-bottom: 1px solid var(--border-color);
+    /* Alt çizgi */
+}
+
+
+/* ==========================================================================
+   BÖLÜM 8: NAVİGASYON (MENÜ) STİLLERİ
+   Üst menü çubuğu stilleri.
+   Flexbox kullanılarak yatay hizalama yapılır.
+   ========================================================================== */
+.navbar {
+    display: flex;
+    /* Flexbox layout kullan */
+    justify-content: space-between;
+    /* Elemanları iki uca dağıt */
+    align-items: center;
+    /* Dikey ortala */
+    padding: 1rem 2rem;
+    /* İç boşluk */
+    background-color: var(--nav-bg);
+    /* Arka plan rengi */
+    box-shadow: var(--shadow-sm);
+    /* Hafif gölge efekti */
+    position: sticky;
+    /* Kaydırırken sabit kal */
+    top: 0;
+    /* En üstte sabit */
+    z-index: 1000;
+    /* Diğer elemanların üstünde */
+}
+
+/* Logo/Site adı stili */
+.nav-logo {
+    font-size: 1.5rem;
+    /* Büyük font */
+    font-weight: 700;
+    /* Kalın */
+    color: var(--nav-text);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    /* Harf aralığını artır */
+}
+
+.nav-logo:hover {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+/* Menü listesi */
+.nav-menu {
+    display: flex;
+    /* Yatay sırala */
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    /* Liste işaretlerini kaldır */
+    margin: 0;
+    padding: 0;
+    gap: 0.5rem;
+    /* Elemanlar arası boşluk */
+}
+
+/* Menü öğesi */
+.nav-item {
+    margin-left: 1.5rem;
+    /* Sol boşluk */
+}
+
+/* Menü linki */
+.nav-link {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--nav-text);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    /* Tıklanabilir alan */
+    border-radius: 8px;
+    /* Yuvarlatılmış köşeler */
+    transition: all var(--transition-speed);
+    /* Tüm özellikler için geçiş */
+}
+
+.nav-link:hover {
+    color: var(--accent-color);
+    background-color: rgba(125, 139, 105, 0.1);
+    /* Hafif yeşil arka plan */
+    text-decoration: none;
+}
+
+
+/* ==========================================================================
+   BÖLÜM 9: HAMBURGERmenü (MOBİL MENÜ)
+   768px'den küçük ekranlarda görünür.
+   3 çizgi şeklinde ikon.
+   ========================================================================== */
+.hamburger {
+    display: none;
+    /* Varsayılan: gizli */
+    cursor: pointer;
+    /* İmleç: el işareti */
+    padding: 10px;
+    /* Tıklanabilir alan */
+}
+
+/* Hamburger çizgileri */
+.bar {
+    display: block;
+    width: 28px;
+    /* Çizgi genişliği */
+    height: 3px;
+    /* Çizgi kalınlığı */
+    margin: 6px auto;
+    /* Çizgiler arası boşluk */
+    background-color: var(--text-color);
+    border-radius: 2px;
+    /* Yuvarlatılmış uçlar */
+    transition: all var(--transition-speed) ease-in-out;
+    /* Animasyon geçişi */
+}
+
+
+/* ==========================================================================
+   BÖLÜM 10: MOBİL RESPONSIVE STİLLER
+   @media sorgusu ile 768px'den küçük ekranlar için özel stiller.
+   ========================================================================== */
+@media (max-width: 768px) {
+
+    /* Mobilde hamburger menüyü göster */
+    .hamburger {
+        display: block;
+    }
+
+    /* Hamburger aktifken orta çizgiyi gizle */
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+        /* Görünmez yap */
+    }
+
+    /* Hamburger aktifken üst çizgiyi döndür (X şekli için) */
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+        /* Aşağı kaydır ve döndür */
+    }
+
+    /* Hamburger aktifken alt çizgiyi döndür (X şekli için) */
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+        /* Yukarı kaydır ve döndür */
+    }
+
+    /* Mobil menü - varsayılan: gizli */
+    .nav-menu {
+        position: fixed;
+        /* Sabit konum */
+        left: -100%;
+        /* Ekranın solunda gizle */
+        top: 70px;
+        /* Navbar'ın altında */
+        flex-direction: column;
+        /* Dikey sırala */
+        background-color: var(--nav-bg);
+        width: 100%;
+        /* Tam genişlik */
+        text-align: center;
+        transition: 0.3s;
+        /* Kayma animasyonu */
+        box-shadow: var(--shadow-md);
+        padding: 20px 0;
+    }
+
+    /* Mobil menü öğesi boşluğu */
+    .nav-item {
+        margin: 16px 0;
+    }
+
+    /* Mobil menü aktifken göster */
+    .nav-menu.active {
+        left: 0;
+        /* Ekrana kaydır */
+    }
+
+    /* Mobilde paragraf genişliği */
+    p {
+        padding: 0 15px;
+    }
+
+    /* Mobilde başlık boyutu küçült */
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+}
+
+
+/* ==========================================================================
+   BÖLÜM 11: SLIDER (YATAY KAYDIRMALI GALERİ)
+   Fotoğrafları yatay olarak kaydırmalı gösterir.
+   scroll-snap ile "yapışkan" kaydırma efekti sağlar.
+   ========================================================================== */
+.slider-container {
+    display: flex;
+    /* Yatay flexbox */
+    overflow-x: auto;
+    /* Yatay kaydırma çubuğu */
+    scroll-snap-type: x mandatory;
+    /* X ekseninde yapışkan kaydırma */
+    gap: 20px;
+    /* Kartlar arası boşluk */
+    background-color: var(--slider-bg);
+    /* Arka plan rengi */
+    padding: 30px;
+    /* İç boşluk */
+    margin: 20px 0;
+    /* Üst-alt dış boşluk */
+    border-radius: 16px;
+    /* Yuvarlatılmış köşeler */
+    -webkit-overflow-scrolling: touch;
+    /* iOS'ta yumuşak kaydırma */
+    scrollbar-width: thin;
+    /* Firefox: ince kaydırma çubuğu */
+}
+
+/* Chrome/Safari için özel kaydırma çubuğu stili */
+.slider-container::-webkit-scrollbar {
+    height: 10px;
+    /* Kaydırma çubuğu yüksekliği */
+}
+
+.slider-container::-webkit-scrollbar-track {
+    background: var(--slider-bg);
+    /* Ray arka planı */
+    border-radius: 10px;
+}
+
+.slider-container::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.5);
+    /* Yarı saydam beyaz */
+    border-radius: 10px;
+    border: 2px solid var(--slider-bg);
+}
+
+/* Slider içindeki her kart */
+.slider-container div {
+    flex: 0 0 auto;
+    /* Boyutunu koru, büyüme/küçülme */
+    width: 320px;
+    /* Sabit genişlik */
+    scroll-snap-align: center;
+    /* Kaydırmada ortaya hizala */
+    background-color: var(--card-bg);
+    /* Kart arka planı */
+    padding: 12px;
+    /* İç boşluk */
+    border-radius: 16px;
+    /* Yuvarlatılmış köşeler */
+    box-shadow: var(--shadow-md);
+    /* Gölge efekti */
+    transition: transform var(--transition-speed) ease,
+        box-shadow var(--transition-speed) ease;
+    /* Animasyon geçişleri */
+}
+
+/* Kart üzerine gelince efekt (hover) */
+.slider-container div:hover {
+    transform: translateY(-8px) scale(1.02);
+    /* Yukarı kaldır ve büyüt */
+    box-shadow: var(--shadow-lg);
+    /* Daha büyük gölge */
+}
+
+/* Slider içindeki resimler */
+.slider-container img {
+    width: 100%;
+    /* Kart genişliğine sığdır */
+    height: 350px;
+    /* Sabit yükseklik */
+    object-fit: cover;
+    /* Resmi kırpmadan sığdır */
+    border-radius: 12px;
+    /* Yuvarlatılmış köşeler */
+    display: block;
+    /* Block element yap */
+}
+
+
+/* ==========================================================================
+   BÖLÜM 12: SIDEBAR (YAN PANEL)
+   Sayfa kenarında ek bilgi göstermek için kullanılır.
+   ========================================================================== */
+.sidebar {
+    width: 250px;
+    /* Sabit genişlik */
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+}
+
+
+/* ==========================================================================
+   BÖLÜM 13: CONTAINER (İÇERİK KUTUSU)
+   Sayfadaki ana içerik alanı.
+   max-width ile okunabilir genişlik sağlar.
+   ========================================================================== */
+.container {
+    max-width: 900px;
+    /* Maksimum 900px genişlik */
+    margin: 30px auto;
+    /* Ortala ve üst-alt boşluk */
+    padding: 40px;
+    /* İç boşluk */
+    background-color: var(--container-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    /* Yuvarlatılmış köşeler */
+    box-shadow: var(--shadow-md);
+}
+
+
+/* ==========================================================================
+   BÖLÜM 14: İLETİŞİM FORMU STİLLERİ
+   Contact sayfasındaki form elemanları.
+   ========================================================================== */
+
+/* Form sarmalayıcı */
+.contact-wrapper {
+    display: flex;
+    flex-direction: column;
+    /* Dikey sırala */
+    gap: 30px;
+    /* Elemanlar arası boşluk */
+}
+
+/* Form ana yapısı */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: left;
+    /* Yazıları sola hizala */
+}
+
+/* Form grubu (label + input) */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    /* Label ve input arası boşluk */
+}
+
+/* Form satırı - 2 sütunlu grid */
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* 2 eşit sütun */
+    gap: 20px;
+}
+
+/* Form etiketleri */
+label {
+    font-weight: 600;
+    color: var(--text-color);
+    font-size: 0.95rem;
+}
+
+/* Input ve textarea genel stilleri */
+input,
+textarea {
+    padding: 14px 18px;
+    /* İç boşluk */
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    font-size: 1rem;
+    font-family: inherit;
+    /* Sayfa fontunu kullan */
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    transition: border-color var(--transition-speed),
+        box-shadow var(--transition-speed);
+}
+
+/* Input/textarea odaklanınca (focus) */
+input:focus,
+textarea:focus {
+    outline: none;
+    /* Varsayılan outline'ı kaldır */
+    border-color: var(--accent-color);
+    /* Kenarlık rengini değiştir */
+    box-shadow: 0 0 0 4px rgba(125, 139, 105, 0.15);
+    /* Yumuşak glow efekti */
+}
+
+/* Gönder butonu */
+.btn {
+    padding: 16px 32px;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    /* El işareti imleci */
+    transition: all var(--transition-speed);
+    align-self: flex-start;
+    /* Sola hizala */
+}
+
+/* Buton hover efekti */
+.btn:hover {
+    opacity: 0.9;
+    transform: translateY(-3px);
+    /* Yukarı kaldır */
+    box-shadow: var(--shadow-md);
+}
+
+/* İletişim bilgileri alanı */
+.contact-info {
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-around;
+    /* Eşit dağıt */
+    flex-wrap: wrap;
+    /* Satır taşınca alt satıra geç */
+    gap: 20px;
+}
+
+/* Her iletişim bilgisi öğesi */
+.contact-info-item {
+    display: flex;
+    align-items: center;
+    /* Dikey ortala */
+    gap: 12px;
+    font-size: 1rem;
+    color: var(--text-color);
+    padding: 12px 20px;
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    transition: transform var(--transition-speed);
+}
+
+.contact-info-item:hover {
+    transform: translateY(-2px);
+}
+
+
+/* ==========================================================================
+   BÖLÜM 15: MOBİL FORM RESPONSİVE
+   Mobil cihazlarda form görünümü.
+   ========================================================================== */
+@media (max-width: 768px) {
+
+    /* Mobilde tek sütun */
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    /* Mobilde buton tam genişlik */
+    .btn {
+        width: 100%;
+        align-self: center;
+    }
+
+    /* Mobilde iletişim bilgileri dikey */
+    .contact-info {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Container mobil uyumu */
+    .container {
+        margin: 15px;
+        padding: 25px;
+    }
+}
+
+
+/* ==========================================================================
+   BÖLÜM 16: FOOTER (ALT BİLGİ)
+   Sayfanın en altındaki alan.
+   ========================================================================== */
+footer {
+    margin-top: 50px;
+    /* Üst boşluk */
+    padding: 30px 20px;
+    background-color: var(--nav-bg);
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+}
+
+.footer-text {
+    color: var(--text-color);
+    font-size: 0.95rem;
+}
+
+/* Kurt emojisi animasyonu */
+.wolf {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.wolf:hover {
+    transform: scale(1.3) rotate(10deg);
+    /* Büyüt ve döndür */
+}
+
+
+/* ==========================================================================
+   BÖLÜM 17: SOSYAL MEDYA İKONLARI
+   İletişim sayfasındaki sosyal medya ikonları.
+   ========================================================================== */
+.social-icon {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    /* Oranı koru */
+    transition: transform var(--transition-speed);
+}
+
+.social-icon:hover {
+    transform: scale(1.2);
+    /* Hover'da büyüt */
+}
+
+
+/* ==========================================================================
+   BÖLÜM 18: SECTION STİLLERİ
+   Sayfa bölümleri için özel stiller.
+   ========================================================================== */
+section {
+    padding: 20px 0;
+    /* Üst-alt boşluk */
+    margin-bottom: 20px;
+}
+
+/* Section başlıkları */
+section h4 {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+/* Section başlık alt çizgisi */
+section h4::after {
+    content: '';
+    /* Boş içerik */
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    /* Ortala */
+    width: 50px;
+    height: 3px;
+    background-color: var(--accent-color);
+    border-radius: 2px;
+}
+
+
+/* ==========================================================================
+   BÖLÜM 19: HERO SECTION (ANA TANITIM BÖLÜMÜ)
+   Anasayfadaki ilk ve en önemli bölüm.
+   Ziyaretçinin dikkatini çekmek için tasarlandı.
+   ========================================================================== */
+.hero {
+    padding: 60px 20px;
+    /* Üst-alt ve yanlarda boşluk */
+    min-height: 60vh;
+    /* Minimum yükseklik - viewport'un %60'ı */
+    display: flex;
+    /* Flexbox kullan */
+    align-items: center;
+    /* Dikeyde ortala */
+    justify-content: center;
+    /* Yatayda ortala */
+}
+
+/* Hero içerik kutusu */
+.hero-content {
+    max-width: 800px;
+    /* Maksimum genişlik */
+    text-align: center;
+}
+
+/* Profil resmi/emoji alanı */
+.profile-image {
+    width: 150px;
+    /* Genişlik */
+    height: 150px;
+    /* Yükseklik */
+    margin: 0 auto 30px;
+    /* Ortala ve alt boşluk */
+    background-color: var(--card-bg);
+    /* Arka plan */
+    border-radius: 50%;
+    /* Tam yuvarlak */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-lg);
+    /* Büyük gölge efekti */
+    transition: transform var(--transition-speed);
+}
+
+.profile-image:hover {
+    transform: scale(1.05) rotate(5deg);
+    /* Hover'da büyüt ve döndür */
+}
+
+/* Profil emoji stili */
+.profile-emoji {
+    font-size: 80px;
+    /* Büyük emoji */
+}
+
+/* Hero ana başlık */
+.hero-title {
+    font-size: 2.5rem;
+    /* Büyük font */
+    margin-bottom: 15px;
+    line-height: 1.3;
+}
+
+/* Highlight (vurgulanan) yazı */
+.highlight {
+    color: var(--accent-color);
+    /* Vurgu rengi ile renklendir */
+    position: relative;
+}
+
+/* Highlight altına dekoratif çizgi */
+.highlight::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--accent-color);
+    border-radius: 2px;
+    opacity: 0.5;
+}
+
+/* Hero alt başlık */
+.hero-subtitle {
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+/* Hero açıklama metni */
+.hero-description {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 30px;
+    opacity: 0.9;
+}
+
+/* Hero butonları container */
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    /* Butonlar arası boşluk */
+    justify-content: center;
+    flex-wrap: wrap;
+    /* Mobilde alt satıra geç */
+}
+
+
+/* ==========================================================================
+   BÖLÜM 20: BUTON ÇEŞİTLERİ
+   Farklı buton stilleri - primary, secondary, outline
+   ========================================================================== */
+
+/* Primary buton - Ana buton stili */
+.btn-primary {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 14px 28px;
+    border-radius: 10px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all var(--transition-speed);
+    border: 2px solid var(--accent-color);
+}
+
+.btn-primary:hover {
+    background-color: transparent;
+    color: var(--accent-color);
+    transform: translateY(-3px);
+    text-decoration: none;
+}
+
+/* Secondary buton - İkincil buton */
+.btn-secondary {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    padding: 14px 28px;
+    border-radius: 10px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all var(--transition-speed);
+    border: 2px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+    background-color: var(--accent-color);
+    color: white;
+    border-color: var(--accent-color);
+    transform: translateY(-3px);
+    text-decoration: none;
+}
+
+/* Outline buton - Çerçeveli buton */
+.btn-outline {
+    background-color: transparent;
+    color: var(--text-color);
+    padding: 14px 28px;
+    border-radius: 10px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all var(--transition-speed);
+    border: 2px solid var(--text-color);
+}
+
+.btn-outline:hover {
+    background-color: var(--text-color);
+    color: var(--bg-color);
+    transform: translateY(-3px);
+    text-decoration: none;
+}
+
+
+/* ==========================================================================
+   BÖLÜM 21: SKILLS SECTION (YETENEKLER BÖLÜMÜ)
+   Yetenek kartlarını grid layout ile gösterir.
+   ========================================================================== */
+.skills-section {
+    padding: 50px 20px;
+    background-color: var(--card-bg);
+}
+
+.skills-section h3 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 1.8rem;
+}
+
+/* Skills grid - 4 sütunlu grid */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    /* Responsive grid */
+    gap: 25px;
+    /* Kartlar arası boşluk */
+    max-width: 900px;
+    margin: 0 auto;
+    /* Ortala */
+    padding: 0 20px;
+}
+
+/* Her yetenek kartı - kutucuk şeklinde */
+.skill-card {
+    background-color: var(--container-bg);
+    padding: 30px 20px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: var(--shadow-md);
+    border: 2px solid var(--border-color);
+    /* Belirgin kenarlık */
+    transition: transform var(--transition-speed),
+        box-shadow var(--transition-speed),
+        border-color var(--transition-speed);
+}
+
+.skill-card:hover {
+    transform: translateY(-10px);
+    /* Yukarı kaldır */
+    box-shadow: var(--shadow-lg);
+    /* Daha büyük gölge */
+    border-color: var(--accent-color);
+    /* Hover'da yeşil kenarlık */
+}
+
+/* Skill kartı ikonu */
+.skill-icon {
+    font-size: 50px;
+    /* Büyük emoji/ikon */
+    display: block;
+    margin-bottom: 15px;
+}
+
+/* Skill kartı başlığı */
+.skill-card h4 {
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+/* Skill kartı açıklaması */
+.skill-card p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* ==========================================================================
+   BÖLÜM 22: STATS SECTION (İSTATİSTİKLER BÖLÜMÜ)
+   Rakamlarla başarıları gösterir.
+   ========================================================================== */
+.stats-section {
+    padding: 50px 20px;
+}
+
+/* Stats grid - 4 sütunlu */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 30px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Her stat öğesi */
+.stat-item {
+    text-align: center;
+    padding: 20px;
+}
+
+/* Stat rakamı */
+.stat-number {
+    display: block;
+    font-size: 3rem;
+    /* Çok büyük */
+    font-weight: 700;
+    color: var(--accent-color);
+    margin-bottom: 10px;
+}
+
+/* Stat etiketi */
+.stat-label {
+    font-size: 1rem;
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+
+/* ==========================================================================
+   BÖLÜM 23: MOBİL RESPONSIVE - HOMEPAGE
+   Anasayfa için mobil uyumlu stiller.
+   ========================================================================== */
+@media (max-width: 768px) {
+    .hero {
+        padding: 40px 15px;
+        min-height: auto;
+    }
+
+    .hero-title {
+        font-size: 1.8rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        /* Dikey sırala */
+        align-items: center;
+    }
+
+    .hero-buttons .btn-primary,
+    .hero-buttons .btn-secondary,
+    .hero-buttons .btn-outline {
+        width: 100%;
+        max-width: 280px;
+        text-align: center;
+    }
+
+    .profile-image {
+        width: 120px;
+        height: 120px;
+    }
+
+    .profile-emoji {
+        font-size: 60px;
+    }
+
+    .stat-number {
+        font-size: 2.5rem;
+    }
+}
+
+
+/* ==========================================================================
+   SON - CSS DOSYASI SONU
+   ========================================================================== */

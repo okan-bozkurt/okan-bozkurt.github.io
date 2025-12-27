@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Google Fonts - Inter font ailesi -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Ana CSS dosyası -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <script>
+        (function () {
+            var theme = localStorage.getItem('theme');
+            if (theme === 'dark') {
+                document.body.classList.add('dark-mode');
+            }
+        })();
+    </script>
+    <div class="eye-health-banner">
+        👁️ Bu sayfa mavi ışık içermez - Göz sağlığınız için endişe edinmeyin - Sayfayı okurken rahat edebilirsiniz
+    </div>
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="nav-logo">Okan Bozkurt</a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Anasayfa</a></li>
+                <li class="nav-item"><a href="about_me.html" class="nav-link">Hakkımda</a></li>
+                <li class="nav-item"><a href="portfolio.html" class="nav-link">Portfolyo</a></li>
+                <li class="nav-item"><a href="my_hobbies.html" class="nav-link">Boş Zamanlarım</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">İletişim</a></li>
+                <li class="nav-item" style="cursor: pointer;" id="theme-toggle">🌓</li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+    <h1>KİM BU LAVUK?</h1>
+    <h2>Ben Okan Bozkurt 🐺</h2>
+    <section id="biography">
+        <h4>Biyografi</h4>
+        <p>Adıyaman'da dünyaya geldim. Çocukluğum sokak oyunları oyanayarak, bisiklet sürerek, derslerine çalışarak ve
+            basit
+            bilgisayar
+            oyunları oynayarak geçti.
+            Lise 11. sınıfta aldığım "kendi işimi kurmak için en rahat yatırımı yazılım öğrenip alabilirim" düşüncesiyle
+            bilgisayar alanına yönelmeyi tercih ettim.
+            YKS sınavından elde ettiğim not sayesinde <a href="https://www.cukurova.edu.tr/" , target="_blank">Çukurova
+                Üniversitesi</a> <a href="https://ebs.cu.edu.tr/Program/GenelBilgi/150" , target="_blank">Bilgisayar
+                Bilimleri</a> bölümüne
+            ilk yerleşen kişi
+            ben oldum.
+            Girişimci ruhumun getirdiği şevkle birlikte birçok etkinlikte gerek katılımcı gerek görevli gerekse kurucu
+            olarak görevlerde bulundum.
+        </p>
+    </section>
+
+    <section id="experience">
+        <h4>Deneyimlerim</h4>
+        <h5>1.5 Adana Cyberova Rover Takımı (2023-2024)</h5>
+        <p>1.5 Adana Cyberova Rover Takımı insansız kara aracı, insansız sanayi yük aracı vb. sistemler geliştiren bir
+            üniversite öğrenci takımıdır.
+            Bulunduğum yıl takımımız 20 kişiden oluşmaktaydı.
+            Takımda bulunduğum süre boyunca ilgilendiğim alan gömüllü sistem, iletişim sistemleri ve araç kontrol
+            arayüzü
+            tasarımı oldu.
+            Kendime ardiuno kartları, sensörler, iletişim biçimleri, python ile arayüz tasarımı konusunda teknik
+            bilgiler
+            kattım ve bunu pratikte uyguladım.
+            Takımda takım içi iletişim, takım içi çalışma, takım içi planlama, takım içi değerlendirme
+            öğrenmemin yanı sıra bir işe uykundan feragat, kendinden fedakarlık ederek çalışmanın ne anlama geldiğini
+            anladım.
+            Takım arkadaşlarımla beraber sanayi ortamına giderek sanayi ortamında işleyişi görme fırsatı buldum.
+        </p>
+        <div class="slider-container">
+            <div><img src="images/ozlabs/co1.jpeg" alt="Bisiklet" width="108" height="190"></div>
+            <div><img src="images/ozlabs/co2.jpeg" alt="Bisiklet" width="108" height="190"></div>
+            <div><img src="images/ozlabs/co3.jpeg" alt="Bisiklet" width="108" height="190"></div>
+            <div><img src="images/ozlabs/co4.jpeg" alt="Bisiklet" width="108" height="190"></div>
+            <div><img src="images/ozlabs/co5.jpeg" alt="Bisiklet" width="108" height="190"></div>
+            <div><img src="images/ozlabs/co6.jpeg" alt="Bisiklet" width="108" height="190"></div>
+        </div>
+        <h5>OZLabs (2024-devam ediyor)</h5>
+        <p>OZLabs şirketlere çözümler sunan bir iş geliştirme firmasıdır. OZLabs 10 kişilik bir iş geliştirme ekibidir.
+            Ben OZLabs içerisinde Yapay Zeka Otomasyon Geliştiricisi olarak görev almaktayım. 3. Parti uygulamalar ve
+            python
+            kodlama
+            dili kullanarak yapay zeka otomasyon sistemleri kurmaktayım. Süreç içerisinde şirketlerin ne gibi desteklere
+            ihtiyaçları,
+            hangi alanda yapay zeka otomasyonu kullanılabileceği hakkında kazanımlar kazanıp teknik bilgilerimi
+            güçlendirerek ilerlemekteyim.
+
+        </p>
+        <div class="slider-container">
+            <div><img src="images/ozlabs/oz1.jpeg" alt="Bisiklet" width="108" height="190"></div>
+            <div><img src="images/ozlabs/oz2.jpeg" alt="Bisiklet" width="108" height="190"></div>
+            <div><img src="images/ozlabs/oz3.jpeg" alt="Bisiklet" width="108" height="190"></div>
+            <div><img src="images/ozlabs/oz4.jpeg" alt="Bisiklet" width="108" height="190"></div>
+            <div><img src="images/ozlabs/oz5.jpeg" alt="Bisiklet" width="108" height="190"></div>
+        </div>
+    </section>
+    <section id="experience">
+        <h5>Çukurova Teknokent</h5>
+        <p>
+            Çukurova Teknokent’in kurulma amacı; Çukurova bölgesinde üniversite-sanayi işbirliğinin daha etkin bir
+            şekilde
+            uygulanmasına öncülük etmektir.Araştırma Geliştirme projeleri için uygun fiziki ve ekonomik imkânları
+            sunmayı
+            hedefleyen Çukurova Teknokent, yapılan araştırmaların ekonomik değere dönüşebilmesi için üniversitelerin
+            gelişmiş insan gücü ve altyapı olanaklarının rekabet gücünü artıracak teknolojileri geliştiren ve üreten
+            firmalara sunularak üniversite-sanayi arasında bir sinerji oluşmasına katkı sağlamayı amaçlamaktadır.
+            Çukurova
+            Teknoloji Geliştirme Bölgesi Yönetici A.Ş. bünyesinde, Teknoloji TransferOfisi, Adana Girişimcilik Merkezi,
+            Kimya Vadisi, Kuluçka Merkezi Patent Ofisi ve Avrupa İşletmeler Ağı Doğu Akdeniz Ofisi birimleri ve Çukurova
+            Teknoloji Geliştirme Blgesinde faaliyet gösteren 100’ün üzerinde Ar-Ge firması bulunmaktadır.
+            Ben Çukurova Teknokent'te girişimcilik hakkında kendimi geliştirdiğim bir staj yapmaktayım. Bu süreçte
+            sağlıklı
+            bir şekilde şirket planlaması nasıl yapılır,
+            fikir nasıl ürüne dönüşür, bir şirketin yatırım alabileceği kanallar nelerdir gibi kazanımlar kazanıyorum.
+            Çukurova Teknokent'tin sağladığı ortam ile beraber network ağımı da genişletme imkanı buluyorum.
+        </p>
+    </section>
+    <footer>
+        <p class="footer-text">Bu sayfa Okan Bozkurt <span class="wolf">🐺</span> tarafından oluşturulmuştur. </p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

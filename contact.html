@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İletişim</title>
+    <!-- Google Fonts - Inter font ailesi -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Ana CSS dosyası -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <script>
+        (function () {
+            var theme = localStorage.getItem('theme');
+            if (theme === 'dark') {
+                document.body.classList.add('dark-mode');
+            }
+        })();
+    </script>
+    <div class="eye-health-banner">
+        👁️ Bu sayfa mavi ışık içermez - Göz sağlığınız için endişe edinmeyin - Sayfayı okurken rahat edebilirsiniz
+    </div>
+    <header>
+        <nav class="navbar">
+            <a href="about_me.html" class="nav-logo">Okan Bozkurt</a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Anasayfa</a></li>
+                <li class="nav-item"><a href="about_me.html" class="nav-link">Hakkımda</a></li>
+                <li class="nav-item"><a href="portfolio.html" class="nav-link">Portfolyo</a></li>
+                <li class="nav-item"><a href="my_hobbies.html" class="nav-link">Boş Zamanlarım</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">İletişim</a></li>
+                <li class="nav-item" style="cursor: pointer;" id="theme-toggle">🌓</li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+    <main class="container">
+        <div class="contact-wrapper">
+            <div style="text-align: center;">
+                <h1>Bana Ulaşın</h1>
+                <p>Sorularınız veya iş birlikleri için aşağıdaki formu kullanabilirsiniz.</p>
+            </div>
+
+            <!-- Form: Gönderilince JS fonksiyonunu çağırır (onsubmit) -->
+            <form onsubmit="formGonder(event)" class="contact-form">
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Adınız Soyadınız:</label>
+                        <!-- required: Zorunlu alan -->
+                        <input type="text" id="name" name="name" placeholder="Adınızı giriniz" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">E-posta Adresiniz:</label>
+                        <!-- type="email": Email formatı kontrolü -->
+                        <input type="email" id="email" name="email" placeholder="ornek@email.com" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Mesajınız:</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Mesajınızı buraya yazınız..."
+                        required></textarea>
+                </div>
+
+                <button type="submit" class="btn">Gönder</button>
+            </form>
+
+            <aside class="contact-info">
+                <div class="contact-info-item">
+                    <a href="https://www.linkedin.com/in/okan-bozkurt" target="_blank"><img src="logo/linkedinlogo.png"
+                            alt="LinkedIn" class="social-icon"></a>
+                    <a href="https://www.linkedin.com/in/okan-bozkurt" target="_blank">linkedin.com/in/okan-bozkurt</a>
+                </div>
+                <div class="contact-info-item">
+                    <a href="https://github.com/okan-bozkurt" target="_blank"><img src="logo/githublogo.png"
+                            alt="GitHub" class="social-icon"></a>
+                    <a href="https://github.com/okan-bozkurt" target="_blank">github.com/okan-bozkurt</a>
+                </div>
+                <div class="contact-info-item">
+                    <img src="logo/maillogo.png" alt="Mail" class="social-icon">
+                    okanbozkurt@ozbusiness.dev
+                </div>
+            </aside>
+        </div>
+    </main>
+    <footer>
+        <p class="footer-text">Bu sayfa Okan Bozkurt <span class="wolf">🐺</span> tarafından oluşturulmuştur. </p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
